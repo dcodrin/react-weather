@@ -7,7 +7,9 @@ module.exports = {
     resolve: {
         root: __dirname,
         alias: {
-
+            //Place aliases here
+            //Example:
+            //NameModule: 'path of own module to include'
         },
         extensions:['', '.js', '.jsx']
     },
@@ -25,7 +27,6 @@ module.exports = {
         devServer: {
             historyApiFallback: true,
             contentBase: './public/',
-            hot: true,
             progress: true
         }
     },
