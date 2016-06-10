@@ -1,18 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 
-class App extends React.Component {
-    static render() {
-        return (
-            <div>
-                <h1>Hello Mars! We are live!</h1>
-                {/*Application body*/}
-            </div>
-        );
-    }
-}
+import MainNav from 'MainNav';
+import Weather from 'Weather';
+import About from 'About';
+import Examples from 'Examples';
 
-App.propTypes = {};
-App.defaultProps = {};
+const App = (props) => {
+    return (
+        <div>
+            <MainNav />
+            {props.children}
+        </div>
+    );
+};
 
-ReactDOM.render(<App />, document.querySelector('#app'));
+const routes = (
+    <Router history={hashHistory}>
+        <Route path="/" component={App}>
+            <IndexRoute component={Weather} />
+            <Route path="about" component={About}/>
+            <Route path="examples" component={Examples} />
+        </Route>
+    </Router>
+);
+
+ReactDOM.render(routes, document.querySelector('#app'));
