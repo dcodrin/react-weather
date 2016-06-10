@@ -5,7 +5,7 @@ class App extends React.Component {
   render() {
     return (
         <div>
-            <h1>React Boilerplate</h1>
+            <h1>Hello Mars! We are live!</h1>
             {/*Application body*/}
         </div>
     );
