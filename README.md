@@ -1,1 +1,1 @@
-### Testing es6 with react.
+### React weather app.
