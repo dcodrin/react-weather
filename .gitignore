@@ -4,3 +4,8 @@
 
 # Node
 /node_modules
+
+# Bundle
+
+/public/bundle.js
+/public/bundle.js.map
