@@ -20,6 +20,18 @@ class Weather extends React.Component {
         this.handleCitySelect = this.handleCitySelect.bind(this);
     }
 
+    componentDidMount() {
+        //pull the location from props
+        //react router makes available the props through this.props.location.query
+        const location = this.props.location.query.location;
+
+        if(location && location.length > 0){
+            this.handleCitySelect(location);
+            //reset the hash
+            window.location.hash = '#/';
+        }
+    }
+
     handleCitySelect(city) {
 
         this.setState({isLoading: true});
@@ -38,12 +50,26 @@ class Weather extends React.Component {
             });
     }
 
+    componentWillReceiveProps(nextProps) {
+        //pull the location from nextProps
+        //the router will pass new props to Weather
+        const location = nextProps.location.query.location;
+
+        if(location && location.length > 0){
+            this.handleCitySelect(location);
+            //reset the hash
+            window.location.hash = '#/';
+        }
+    }
+
+
     render() {
         return (
             <div>
                 <h1 className="text-center page-title">Get Weather</h1>
                 <WeatherForm onCitySelect={this.handleCitySelect}/>
-                {this.state.isLoading ? <h1 className="text-center"><img src="./img/ajax-loader.gif" alt=""/></h1> : <WeatherMessage {...this.state}/>}
+                {this.state.isLoading ? <h1 className="text-center"><img src="./img/ajax-loader.gif" alt=""/></h1> :
+                    <WeatherMessage {...this.state}/>}
             </div>
         );
     }

@@ -136,6 +136,7 @@
 	$(document).foundation();
 	
 	//Load custom css using webpack aliases
+	//Notice the usage of sass! loader
 	
 	
 	var App = function App(props) {
@@ -28076,8 +28077,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./app.scss", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./app.scss");
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./app.scss", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./app.scss");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -28095,7 +28096,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".page-title {\n    margin-top: 2.5rem;\n    margin-bottom: 2.5rem;\n}\n\ninput[type=search]:focus {\n    border: 1px solid #1583CC;\n}", ""]);
+	exports.push([module.id, ".page-title {\n  color: #555;\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem; }\n\ninput[type=search]:focus {\n  border: 1px solid #1583CC; }\n", ""]);
 	
 	// exports
 
