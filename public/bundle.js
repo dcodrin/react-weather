@@ -25988,15 +25988,32 @@
 	
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(MainNav).call(this));
 	
+	        _this.state = {
+	            city: ''
+	        };
 	        _this.onSearch = _this.onSearch.bind(_this);
+	        _this.handleChange = _this.handleChange.bind(_this);
 	        return _this;
 	    }
 	
 	    _createClass(MainNav, [{
+	        key: 'handleChange',
+	        value: function handleChange(e) {
+	            this.setState({
+	                city: e.target.value
+	            });
+	        }
+	    }, {
 	        key: 'onSearch',
 	        value: function onSearch(e) {
 	            e.preventDefault();
-	            alert('Not yet wired up!');
+	            var encodedLocation = encodeURIComponent(this.state.city);
+	            if (encodedLocation.length > 0) {
+	                //reroute to homepage with new query
+	                //note: the new query is a new prop to Weather.jsx
+	                window.location.hash = '#/?location=' + encodedLocation;
+	                this.setState({ city: '' });
+	            }
 	        }
 	    }, {
 	        key: 'render',
@@ -26029,8 +26046,8 @@
 	                            null,
 	                            _react2.default.createElement(
 	                                _reactRouter.Link,
-	                                { to: 'about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	                                'About'
+	                                { to: 'examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	                                'Examples'
 	                            )
 	                        ),
 	                        _react2.default.createElement(
@@ -26038,8 +26055,8 @@
 	                            null,
 	                            _react2.default.createElement(
 	                                _reactRouter.Link,
-	                                { to: 'examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	                                'Examples'
+	                                { to: 'about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
+	                                'About'
 	                            )
 	                        )
 	                    )
@@ -26056,7 +26073,7 @@
 	                            _react2.default.createElement(
 	                                'li',
 	                                null,
-	                                _react2.default.createElement('input', { type: 'search', placeholder: 'City name' })
+	                                _react2.default.createElement('input', { onChange: this.handleChange, value: this.state.city, type: 'search', placeholder: 'City name' })
 	                            ),
 	                            _react2.default.createElement(
 	                                'li',
@@ -26136,6 +26153,19 @@
 	    }
 	
 	    _createClass(Weather, [{
+	        key: 'componentDidMount',
+	        value: function componentDidMount() {
+	            //pull the location from props
+	            //react router makes available the props through this.props.location.query
+	            var location = this.props.location.query.location;
+	
+	            if (location && location.length > 0) {
+	                this.handleCitySelect(location);
+	                //reset the hash
+	                window.location.hash = '#/';
+	            }
+	        }
+	    }, {
 	        key: 'handleCitySelect',
 	        value: function handleCitySelect(city) {
 	            var _this2 = this;
@@ -26153,6 +26183,19 @@
 	            }, function (err) {
 	                throw new Error(err.data.message);
 	            });
+	        }
+	    }, {
+	        key: 'componentWillReceiveProps',
+	        value: function componentWillReceiveProps(nextProps) {
+	            //pull the location from nextProps
+	            //the router will pass new props to Weather
+	            var location = nextProps.location.query.location;
+	
+	            if (location && location.length > 0) {
+	                this.handleCitySelect(location);
+	                //reset the hash
+	                window.location.hash = '#/';
+	            }
 	        }
 	    }, {
 	        key: 'render',
