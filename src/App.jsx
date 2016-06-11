@@ -7,6 +7,14 @@ import Weather from 'Weather';
 import About from 'About';
 import Examples from 'Examples';
 
+// Load foundation
+//use css! loader to load css
+//use style! loader to inject css into html
+import 'style!css!foundation-sites/dist/foundation.min.css';
+
+//Launch foundation
+$(document).foundation();
+
 const App = (props) => {
     return (
         <div>
