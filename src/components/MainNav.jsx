@@ -61,7 +61,4 @@ class MainNav extends React.Component {
     }
 }
 
-MainNav.propTypes = {};
-MainNav.defaultProps = {};
-
 export default MainNav;

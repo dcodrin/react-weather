@@ -75,7 +75,4 @@ class Weather extends React.Component {
     }
 }
 
-Weather.propTypes = {};
-Weather.defaultProps = {};
-
 export default Weather;

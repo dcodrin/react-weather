@@ -37,7 +37,4 @@ class WeatherForm extends React.Component {
     }
 }
 
-WeatherForm.propTypes = {};
-WeatherForm.defaultProps = {};
-
 export default WeatherForm;
