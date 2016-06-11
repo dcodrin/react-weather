@@ -3,7 +3,7 @@ import React from 'react';
 export default () => {
     return (
         <div>
-            <h1 className="text-center">About this app</h1>
+            <h1 className="text-center page-title">About this app</h1>
             <p>A react based weather app.</p>
             <p>Links to the tools used for this app.</p>
             <ul>

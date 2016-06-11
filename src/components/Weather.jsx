@@ -41,7 +41,7 @@ class Weather extends React.Component {
     render() {
         return (
             <div>
-                <h1 className="text-center">Get Weather</h1>
+                <h1 className="text-center page-title">Get Weather</h1>
                 <WeatherForm onCitySelect={this.handleCitySelect}/>
                 {this.state.isLoading ? <h1 className="text-center"><img src="./img/ajax-loader.gif" alt=""/></h1> : <WeatherMessage {...this.state}/>}
             </div>

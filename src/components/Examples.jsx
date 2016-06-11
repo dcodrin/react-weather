@@ -4,7 +4,7 @@ import {Link} from 'react-router';
 export default () => {
     return (
         <div>
-            <h1 className="text-center">Examples</h1>
+            <h1 className="text-center page-title">Examples</h1>
             <p>Example locations.</p>
             <ol>
                 <li>

@@ -123,14 +123,19 @@
 	
 	__webpack_require__(260);
 	
+	__webpack_require__(264);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	//Launch foundation
-	$(document).foundation();
+	
 	
 	//Load foundation
 	//use css! loader to load css
 	//use style! loader to inject css into html
+	$(document).foundation();
+	
+	//Load custom css
 	
 	
 	var App = function App(props) {
@@ -26156,7 +26161,7 @@
 	                null,
 	                _react2.default.createElement(
 	                    'h1',
-	                    { className: 'text-center' },
+	                    { className: 'text-center page-title' },
 	                    'Get Weather'
 	                ),
 	                _react2.default.createElement(_WeatherForm2.default, { onCitySelect: this.handleCitySelect }),
@@ -28054,6 +28059,46 @@
 		if(oldSrc)
 			URL.revokeObjectURL(oldSrc);
 	}
+
+
+/***/ },
+/* 264 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(265);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(263)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../node_modules/css-loader/index.js!./app.css", function() {
+				var newContent = require("!!./../../node_modules/css-loader/index.js!./app.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 265 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(262)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, ".page-title {\n    margin-top: 2.5rem;\n    margin-bottom: 2.5rem;\n}", ""]);
+	
+	// exports
 
 
 /***/ }

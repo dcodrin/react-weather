@@ -12,6 +12,9 @@ import Examples from 'Examples';
 //use style! loader to inject css into html
 import 'style!css!foundation-sites/dist/foundation.min.css';
 
+//Load custom css using webpack aliases
+import 'style!css!applicationStyles';
+
 //Launch foundation
 $(document).foundation();
 
