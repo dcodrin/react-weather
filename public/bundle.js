@@ -128,7 +128,7 @@
 	//Launch foundation
 	$(document).foundation();
 	
-	// Load foundation
+	//Load foundation
 	//use css! loader to load css
 	//use style! loader to inject css into html
 	
@@ -26024,7 +26024,7 @@
 	                            _react2.default.createElement(
 	                                _reactRouter.Link,
 	                                { to: 'about', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
-	                                'The About'
+	                                'About'
 	                            )
 	                        ),
 	                        _react2.default.createElement(
@@ -26032,8 +26032,7 @@
 	                            null,
 	                            _react2.default.createElement(
 	                                _reactRouter.Link,
-	                                { to: 'examples', activeClassName: 'active',
-	                                    activeStyle: { fontWeight: 'bold' } },
+	                                { to: 'examples', activeClassName: 'active', activeStyle: { fontWeight: 'bold' } },
 	                                'Examples'
 	                            )
 	                        )
@@ -27526,7 +27525,7 @@
 /* 258 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -27540,12 +27539,71 @@
 	
 	exports.default = function () {
 	    return _react2.default.createElement(
-	        'div',
+	        "div",
 	        null,
 	        _react2.default.createElement(
-	            'h1',
+	            "h1",
+	            { className: "text-center" },
+	            "About this app"
+	        ),
+	        _react2.default.createElement(
+	            "p",
 	            null,
-	            'The About Page'
+	            "A react based weather app."
+	        ),
+	        _react2.default.createElement(
+	            "p",
+	            null,
+	            "Links to the tools used for this app."
+	        ),
+	        _react2.default.createElement(
+	            "ul",
+	            null,
+	            _react2.default.createElement(
+	                "li",
+	                null,
+	                _react2.default.createElement(
+	                    "a",
+	                    { href: "https://github.com/facebook/react" },
+	                    "React"
+	                )
+	            ),
+	            _react2.default.createElement(
+	                "li",
+	                null,
+	                _react2.default.createElement(
+	                    "a",
+	                    { href: "https://github.com/reactjs/react-router" },
+	                    "React-Router"
+	                )
+	            ),
+	            _react2.default.createElement(
+	                "li",
+	                null,
+	                _react2.default.createElement(
+	                    "a",
+	                    { href: "https://github.com/mzabriskie/axios" },
+	                    "Axios"
+	                )
+	            ),
+	            _react2.default.createElement(
+	                "li",
+	                null,
+	                _react2.default.createElement(
+	                    "a",
+	                    { href: "http://openweathermap.org/" },
+	                    "Open Weather Map"
+	                )
+	            ),
+	            _react2.default.createElement(
+	                "li",
+	                null,
+	                _react2.default.createElement(
+	                    "a",
+	                    { href: "http://foundation.zurb.com/" },
+	                    "Foundation"
+	                )
+	            )
 	        )
 	    );
 	};
