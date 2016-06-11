@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev-server": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline",
-    "deploy": "webpack && git push heroku master",
+    "deploy": "webpack && git commit -m 'Generated production bundle.js' && git push heroku master",
     "start": "node server.js"
   },
   "keywords": [
