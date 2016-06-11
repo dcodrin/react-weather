@@ -26156,13 +26156,13 @@
 	                null,
 	                _react2.default.createElement(
 	                    'h1',
-	                    null,
+	                    { className: 'text-center' },
 	                    'Get Weather'
 	                ),
 	                _react2.default.createElement(_WeatherForm2.default, { onCitySelect: this.handleCitySelect }),
 	                this.state.isLoading ? _react2.default.createElement(
 	                    'h1',
-	                    null,
+	                    { className: 'text-center' },
 	                    'Loading...'
 	                ) : _react2.default.createElement(_WeatherMessage2.default, this.state)
 	            );
@@ -26245,7 +26245,7 @@
 	                        placeholder: 'Enter city name' }),
 	                    _react2.default.createElement(
 	                        'button',
-	                        { type: 'submit' },
+	                        { className: 'expanded button', type: 'submit' },
 	                        'Get Weather'
 	                    )
 	                )
@@ -26286,8 +26286,8 @@
 	
 	    if (cod === 200) {
 	        displayMessage = _react2.default.createElement(
-	            'h1',
-	            null,
+	            'h3',
+	            { className: 'text-center' },
 	            'The temperature in ',
 	            city,
 	            ' is ',
@@ -26296,8 +26296,8 @@
 	        );
 	    } else if (cod === '404') {
 	        displayMessage = _react2.default.createElement(
-	            'h1',
-	            null,
+	            'h3',
+	            { className: 'text-center' },
 	            'City not found!'
 	        );
 	    }
