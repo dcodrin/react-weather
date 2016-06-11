@@ -13,7 +13,8 @@ import Examples from 'Examples';
 import 'style!css!foundation-sites/dist/foundation.min.css';
 
 //Load custom css using webpack aliases
-import 'style!css!applicationStyles';
+//Notice the usage of sass! loader
+import 'style!css!sass!applicationStyles';
 
 //Launch foundation
 $(document).foundation();
