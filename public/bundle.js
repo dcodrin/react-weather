@@ -26063,7 +26063,7 @@
 	                ),
 	                _react2.default.createElement(
 	                    'div',
-	                    { className: 'tob-bar-right' },
+	                    { className: 'top-bar-right' },
 	                    _react2.default.createElement(
 	                        'form',
 	                        { onSubmit: this.onSearch },
@@ -26089,9 +26089,6 @@
 	
 	    return MainNav;
 	}(_react2.default.Component);
-	
-	MainNav.propTypes = {};
-	MainNav.defaultProps = {};
 	
 	exports.default = MainNav;
 
@@ -26221,9 +26218,6 @@
 	    return Weather;
 	}(_react2.default.Component);
 	
-	Weather.propTypes = {};
-	Weather.defaultProps = {};
-	
 	exports.default = Weather;
 
 /***/ },
@@ -26304,9 +26298,6 @@
 	    return WeatherForm;
 	}(_react2.default.Component);
 	
-	WeatherForm.propTypes = {};
-	WeatherForm.defaultProps = {};
-	
 	exports.default = WeatherForm;
 
 /***/ },
@@ -26381,8 +26372,8 @@
 	
 	    if (cod === 200) {
 	        displayMessage = _react2.default.createElement(
-	            'h4',
-	            { className: 'text-center' },
+	            'p',
+	            { className: 'text-center temp-display' },
 	            'The temperature in ',
 	            city,
 	            ' is ',
@@ -28139,7 +28130,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".page-title {\n  color: #555;\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem; }\n\ninput[type=search]:focus {\n  border: 1px solid #1583CC; }\n", ""]);
+	exports.push([module.id, ".top-bar, .top-bar ul {\n  background-color: #4B1166; }\n\n.top-bar .menu-text {\n  color: #ffffff; }\n\n.top-bar a {\n  color: #3FEFC1; }\n\n.page-title {\n  color: #555;\n  margin-top: 2.5rem;\n  margin-bottom: 2.5rem; }\n\ninput[type=search]:focus {\n  border: 1px solid #0fb98c; }\n\n.temp-display {\n  font-size: 1.75rem; }\n\n.button {\n  padding: 0.75rem 3rem;\n  outline: 0;\n  background-color: #11d09e; }\n  .button:hover {\n    background-color: #3FEFC1; }\n  .button:focus {\n    background-color: #3FEFC1; }\n", ""]);
 	
 	// exports
 
