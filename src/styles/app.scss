@@ -1,13 +1,58 @@
 $space-large: 2.5rem;
 $title-color: #555;
-$border-focus-color: #1583CC;
+
+// Colors
+$main-color: #4B1166;
+$main-font-color: #ffffff;
+$secondary-color: #3FEFC1;
+
+// Navigation colors
+$nav-background: $main-color;
+$nav-text-color: $main-font-color;
+$nav-link-color: $secondary-color;
+
+//Input
+$input-border-color: darken($secondary-color, 20%);
+
+//Button
+$btn-background: $main-color;
+$btn-background-hover: lighten($main-color, 10%);
+
+.top-bar, .top-bar ul {
+  background-color: $nav-background;
+}
+
+.top-bar {
+  .menu-text {
+    color: $nav-text-color;
+  }
+  a {
+    color: $nav-link-color;
+  }
+}
 
 .page-title {
-    color: $title-color;
-    margin-top: $space-large;
-    margin-bottom: $space-large;
+  color: $title-color;
+  margin-top: $space-large;
+  margin-bottom: $space-large;
 }
 
 input[type=search]:focus {
-    border: 1px solid $border-focus-color;
+  border: 1px solid $input-border-color;
+}
+
+.temp-display {
+  font-size: 1.75rem;
+}
+
+.button {
+  padding: 0.75rem 3rem;
+  outline: 0;
+  background-color: darken($secondary-color, 15%);
+  &:hover {
+    background-color: $secondary-color;
+  }
+  &:focus {
+    background-color: $secondary-color;
+}
 }

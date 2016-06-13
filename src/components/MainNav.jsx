@@ -48,7 +48,7 @@ class MainNav extends React.Component {
                         </li>
                     </ul>
                 </div>
-                <div className="tob-bar-right">
+                <div className="top-bar-right">
                     <form onSubmit={this.onSearch}>
                         <ul className="menu">
                             <li><input onChange={this.handleChange} value={this.state.city} type="search" placeholder="City name"/></li>

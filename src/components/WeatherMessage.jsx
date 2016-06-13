@@ -23,7 +23,7 @@ export default ({city, temperature, cod}) => {
     var displayMessage = '';
 
     if (cod === 200) {
-        displayMessage = (<h4 className="text-center">The temperature in {city} is {temperature} C&deg;.</h4>);
+        displayMessage = (<p className="text-center temp-display">The temperature in {city} is {temperature} C&deg;.</p>);
     } else if (cod === '404') {
         displayMessage = (<ErrorModal />);
     }
